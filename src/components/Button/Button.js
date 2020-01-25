@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import useButtonStyle from "./styles";
 import styled from "@emotion/styled";
 import css from "@styled-system/css";
@@ -9,7 +10,7 @@ const Button = ({
   isActive,
   isFullWidth,
   children,
-  variantColor = "gray",
+  variantColor = "black",
   leftIcon,
   rightIcon,
   variant = "solid",
@@ -32,5 +33,21 @@ const Button = ({
   );
   return <PseudoBox>{children}</PseudoBox>;
 };
+
+Button.propTypes = {
+  /**
+   The color of the button needed
+   */
+  variantColor: PropTypes.oneOf(["blue", "black"]),
+  /**
+   The type of the button needed
+   */
+  variant: PropTypes.oneOf(["solid", "outline"]),
+  /**
+   Specify size
+  */
+  size: PropTypes.oneOf(["sm", "md", "lg"])
+};
+
 
 export default Button;
