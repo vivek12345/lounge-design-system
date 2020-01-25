@@ -1,21 +1,22 @@
 import { withKnobs } from "@storybook/addon-knobs";
-import { storiesOf } from "@storybook/react";
 import React from "react";
 import { Box } from "../Box";
 import { ButtonGroup } from "../ButtonGroup";
-import { Button } from ".";
+import Button from "./Button";
 
-const stories = storiesOf("Button", module);
-stories.addDecorator(withKnobs);
-stories.addDecorator(story => {
-  return (
-    <Box maxWidth="xl" mx="auto" mt={6} p={6}>
-      {story()}
-    </Box>
-  );
-});
+export default {
+  component: Button,
+  title: 'Button',
+  decorators: [withKnobs, story => {
+    return (
+      <Box maxWidth="xl" mx="auto" mt={6} p={6}>
+        {story()}
+      </Box>
+    );
+  }]
+};
 
-stories.add("variants", () => (
+export const variants = () => (
   <ButtonGroup spacing="24px">
     <Button variantColor="blue" variant="solid">
       Button
@@ -30,9 +31,9 @@ stories.add("variants", () => (
       Button
     </Button>
   </ButtonGroup>
-));
+);
 
-stories.add("sizes", () => (
+export const sizes = () => (
   <ButtonGroup>
     <Button variantColor="blue" size="sm">
       Button
@@ -44,4 +45,5 @@ stories.add("sizes", () => (
       Button
     </Button>
   </ButtonGroup>
-));
+);
+
