@@ -1,0 +1,175 @@
+import { Fragment } from "react";
+import { Meta, Story, Props, Preview } from "@storybook/addon-docs/blocks";
+import Notification from "./Notification";
+import { Stack } from "../Stack";
+import { Button } from "../Button";
+import { Progress } from "../Progress";
+import { Flex } from "../Flex";
+import { Box } from "../Box";
+import { Heading } from "../Heading";
+
+<Meta title="MDX/Notification" component={Notification} />
+
+# Notification
+
+Let's define a story for our `Notification` component
+
+<Story name="Notification">
+  <Notification>
+    <Notification.Content>
+      <Notification.Title>This is a default Notification</Notification.Title>
+    </Notification.Content>
+  </Notification>
+</Story>
+
+<br />
+<br />
+
+## Notification with variants
+
+<Preview withToolbar>
+  <Story name="Notification Variants">
+    <Stack>
+      <Notification variant="info" dismissable={true}>
+        <Notification.Content>
+          <Notification.Title>
+            This is a single line info notification example
+          </Notification.Title>
+        </Notification.Content>
+      </Notification>
+      <Notification variant="error" dismissable={true}>
+        <Notification.Content>
+          <Notification.Title>
+            This is a single line info notification example
+          </Notification.Title>
+        </Notification.Content>
+      </Notification>
+      <Notification variant="success" dismissable={true}>
+        <Notification.Content>
+          <Notification.Title>
+            This is a single line info notification example
+          </Notification.Title>
+        </Notification.Content>
+      </Notification>
+      <Notification variant="warning" dismissable={true}>
+        <Notification.Content>
+          <Notification.Title>
+            This is a single line info notification example
+          </Notification.Title>
+        </Notification.Content>
+      </Notification>
+    </Stack>
+  </Story>
+</Preview>
+
+## Notification with icon
+
+<Preview withToolbar>
+  <Story name="Notification with icon">
+    <Notification variant="info" dismissable={true}>
+      <Notification.Content>
+        <Notification.Icon icon="moon" mr={2} />
+        <Notification.Title>
+          This is a single line info notification example
+        </Notification.Title>
+      </Notification.Content>
+    </Notification>
+  </Story>
+</Preview>
+
+## Notification with multi lines
+
+<Preview withToolbar>
+  <Story name="Notification with multi lines">
+    <Notification variant="info" dismissable={true}>
+      <Notification.Content>
+        <Notification.Title>
+          This is a single line notification example that requires two lines
+        </Notification.Title>
+      </Notification.Content>
+    </Notification>
+  </Story>
+</Preview>
+
+## Notification with multi lines and icon
+
+<Preview withToolbar>
+  <Story name="Notification with multi lines and icon">
+    <Notification variant="info" dismissable={true}>
+      <Notification.Content>
+        <Notification.Icon icon="test" />
+        <Notification.Title>
+          This is a single line notification example that requires two lines
+        </Notification.Title>
+      </Notification.Content>
+    </Notification>
+  </Story>
+</Preview>
+
+## Notification with action item
+
+<Preview withToolbar>
+  <Story name="Notification with action item">
+    <Notification variant="info" dismissable={true}>
+      <Notification.Content>
+        <Notification.Title>
+          This is a single line notification example that requires two lines
+        </Notification.Title>
+      </Notification.Content>
+      <Box mt={5} mb={1}>
+        <Button
+          type="link"
+          size="md"
+          onClick={() => alert("I was click")}
+          fontWeight="bold"
+        >
+          Action Item
+        </Button>
+      </Box>
+    </Notification>
+  </Story>
+</Preview>
+
+## Notification with progress bar
+
+<Preview withToolbar>
+  <Story name="Notification with progress bar">
+    <Notification variant="info" dismissable={true}>
+      <Notification.Content>
+        <Notification.Title>
+          This is a single line notification example that requires two lines
+        </Notification.Title>
+      </Notification.Content>
+      <Flex mt={5} mb={1} align="center">
+        <Heading as="h4" mr={4}>
+          70%
+        </Heading>
+        <Progress variant="info" value="70"></Progress>
+      </Flex>
+    </Notification>
+  </Story>
+</Preview>
+
+## Default Notification with progress bar
+
+<Preview withToolbar>
+  <Story name="Default Notification with progress bar">
+    <Notification variant="default" dismissable={true}>
+      <Notification.Content>
+        <Notification.Title>
+          This is a single line notification example that requires two lines
+        </Notification.Title>
+      </Notification.Content>
+      <Flex mt={5} mb={1} align="center">
+        <Heading as="h4" mr={4}>
+          70%
+        </Heading>
+        <Progress variant="info" value="70"></Progress>
+      </Flex>
+    </Notification>
+  </Story>
+</Preview>
+
+## Properties
+
+<Props of={Notification} />

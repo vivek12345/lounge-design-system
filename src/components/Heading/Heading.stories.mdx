@@ -1,0 +1,43 @@
+import { Meta, Story, Props, Preview } from "@storybook/addon-docs/blocks";
+import { Heading } from "../Heading";
+import { Stack } from "../Stack";
+
+<Meta title="MDX/Heading" component={Heading} />
+
+# Heading
+
+Let's define a story for our `Heading` component
+
+`import { Heading } from "@zalando/lounge-design-system";`
+
+<Preview withToolbar>
+  <Story name="Basic Heading">
+    <Heading as={"h1"} mr={12}>
+      Heading h1
+    </Heading>
+  </Story>
+</Preview>
+
+<br />
+<br />
+
+## Heading types
+
+Preview for `Heading types`
+
+<Preview withToolbar>
+  <Story name="Heading types">
+    <Stack>
+      <Heading as="h1">Heading h1</Heading>
+      <Heading as="h2">Heading h2</Heading>
+      <Heading as="h3">Heading h3</Heading>
+      <Heading as="h4">Heading h4</Heading>
+      <Heading as="h5">Heading h5</Heading>
+      <Heading as="h5">Heading h6</Heading>
+    </Stack>
+  </Story>
+</Preview>
+
+## Properties
+
+<Props of={Heading} />

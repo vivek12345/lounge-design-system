@@ -1,11 +1,22 @@
 /** @jsx jsx */
-import { jsx, ThemeContext } from "@emotion/core";
+import { jsx, ThemeContext, Global } from "@emotion/core";
 import { ThemeProvider as EmotionThemeProvider } from "emotion-theming";
 import { useContext } from "react";
 import { theme } from "../../theme";
 
 const ThemeProvider = ({ children }) => (
-  <EmotionThemeProvider theme={theme}>{children}</EmotionThemeProvider>
+  <EmotionThemeProvider theme={theme}>
+    <Global
+      styles={{
+        "@font-face": {
+          fontFamily: "Roboto, sans-serif",
+          src:
+            "url(https://fonts.googleapis.com/css?family=Roboto&display=swap) format(woff2)",
+        },
+      }}
+    />
+    {children}
+  </EmotionThemeProvider>
 );
 
 const useTheme = () => {

@@ -1,9 +1,10 @@
 /** @jsx jsx */
+import PropTypes from "prop-types";
 import { jsx } from "@emotion/core";
 import { Children, cloneElement, isValidElement } from "react";
 import { Box } from "../Box";
 
-const ButtonGroup = ({ spacing = 2, children }) => {
+const ButtonGroup = ({ spacing = 2, my = 0, children }) => {
   const clones = Children.map(children, (child, index) => {
     if (!isValidElement(child)) return;
 
@@ -11,15 +12,23 @@ const ButtonGroup = ({ spacing = 2, children }) => {
 
     return cloneElement(child, {
       size: child.props.size || "md",
-      variantColor: child.props.variantColor || "blue",
-      variant: child.props.variant || "solid",
+      variant: child.props.variant || "primary",
+      type: child.props.type || "solid",
       _focus: { boxShadow: "outline", zIndex: 1 },
-
-      ...(!isLast && { mr: spacing }),
+      my: my,
+      mr: spacing,
+      ...(isLast && { mr: 0 }),
     });
   });
 
   return <Box display="inline-block">{clones}</Box>;
+};
+
+ButtonGroup.propTypes = {
+  /**
+   Specify the spacing between buttons
+   */
+  spacing: PropTypes.number,
 };
 
 export default ButtonGroup;

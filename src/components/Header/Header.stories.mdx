@@ -1,0 +1,36 @@
+import { Meta, Story, Props, Preview } from "@storybook/addon-docs/blocks";
+import Header from "./Header";
+import { Flex } from "../Flex";
+import { Box } from "../Box";
+import { IconButton } from "../IconButton";
+import { Link } from "../Link";
+
+<Meta title="MDX/Header" component={Header} />
+
+# Header
+
+Let's define a story for our `Header` component
+
+<Preview withToolbar>
+  <Story name="Header">
+    <Header
+      logo="https://shadow-penguin-configuration-ui-staging.zlounge.zalan.do/static/media/lounge_logo_white.b81d4b52.png"
+      title="Product Title"
+      rightMenu={[
+        <IconButton
+          variant="primary"
+          type="outline"
+          icon="moon"
+          mr={4}
+          key="icon-button"
+        ></IconButton>,
+        <IconButton
+          variant="primary"
+          isRound={true}
+          icon="test"
+          key="icon-button-1"
+        ></IconButton>,
+      ]}
+    ></Header>
+  </Story>
+</Preview>

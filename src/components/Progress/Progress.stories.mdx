@@ -1,0 +1,44 @@
+import { Meta, Story, Props, Preview } from "@storybook/addon-docs/blocks";
+import Progress from "./Progress";
+import { Stack } from "../Stack";
+import { Flex } from "../Flex";
+import { Heading } from "../Heading";
+
+<Meta title="MDX/Progress" component={Progress} />
+
+# Progress
+
+Let's define a story for our `Progress` component
+
+<Story name="Progress">
+  <Progress variant="success" value="70"></Progress>
+</Story>
+
+<br />
+<br />
+
+## Progress with variants
+
+<Preview withToolbar>
+  <Story name="Progress Variants">
+    <Stack spacing={6}>
+      <Progress variant="info" value="20"></Progress>
+      <Progress variant="error" value="30"></Progress>
+      <Progress variant="success" value="40"></Progress>
+      <Progress variant="warning" value="80"></Progress>
+    </Stack>
+  </Story>
+</Preview>
+
+## Progress with value
+
+<Preview withToolbar>
+  <Story name="Progress with value">
+    <Flex mt={5} mb={1} align="center">
+      <Progress variant="info" value="70"></Progress>
+      <Heading as="h4" ml={4}>
+        70%
+      </Heading>
+    </Flex>
+  </Story>
+</Preview>

@@ -1,0 +1,66 @@
+import { Meta, Story, Props, Preview } from "@storybook/addon-docs/blocks";
+import Breadcrumb, {
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbSeparator,
+} from "./Breadcrumb";
+import { Icon } from "../Icon";
+
+<Meta title="MDX/Breadcrumb" component={Breadcrumb} />
+
+# Breadcrumb
+
+<Preview withToolbar>
+  <Story name="Breadcrumb">
+    <Breadcrumb>
+      <BreadcrumbItem>
+        <BreadcrumbLink href="#">Home</BreadcrumbLink>
+      </BreadcrumbItem>
+      <BreadcrumbItem>
+        <BreadcrumbLink href="#">Docs</BreadcrumbLink>
+      </BreadcrumbItem>
+      <BreadcrumbItem isCurrentPage>
+        <BreadcrumbLink href="#">Breadcrumb</BreadcrumbLink>
+      </BreadcrumbItem>
+    </Breadcrumb>
+  </Story>
+</Preview>
+
+<br />
+<br />
+
+## Breadcrumb with separators
+
+<Preview withToolbar>
+  <Story name="Breadcrumb with custom seaparator">
+    <Breadcrumb separator={"-"}>
+      <BreadcrumbItem>
+        <BreadcrumbLink href="/">Home</BreadcrumbLink>
+      </BreadcrumbItem>
+      <BreadcrumbItem>
+        <BreadcrumbLink href="/about">About</BreadcrumbLink>
+      </BreadcrumbItem>
+      <BreadcrumbItem isCurrentPage>
+        <BreadcrumbLink href="/contact">Contact</BreadcrumbLink>
+      </BreadcrumbItem>
+    </Breadcrumb>
+  </Story>
+</Preview>
+
+## Breadcrumb with separator icons
+
+<Preview withToolbar>
+  <Story name="Breadcrumb with seaparator icon">
+    <Breadcrumb separator={<Icon color="gray.300" name="caret" />}>
+      <BreadcrumbItem>
+        <BreadcrumbLink href="/">Home</BreadcrumbLink>
+      </BreadcrumbItem>
+      <BreadcrumbItem>
+        <BreadcrumbLink href="/about">About</BreadcrumbLink>
+      </BreadcrumbItem>
+      <BreadcrumbItem isCurrentPage>
+        <BreadcrumbLink href="/contact">Contact</BreadcrumbLink>
+      </BreadcrumbItem>
+    </Breadcrumb>
+  </Story>
+</Preview>

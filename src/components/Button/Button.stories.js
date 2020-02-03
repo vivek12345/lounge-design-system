@@ -6,44 +6,46 @@ import Button from "./Button";
 
 export default {
   component: Button,
-  title: 'Button',
-  decorators: [withKnobs, story => {
-    return (
-      <Box maxWidth="xl" mx="auto" mt={6} p={6}>
-        {story()}
-      </Box>
-    );
-  }]
+  title: "Button",
+  decorators: [
+    withKnobs,
+    story => {
+      return (
+        <Box maxWidth="xl" mx="auto" mt={6} p={6}>
+          {story()}
+        </Box>
+      );
+    },
+  ],
 };
 
 export const variants = () => (
-  <ButtonGroup spacing="24px">
-    <Button variantColor="blue" variant="solid">
+  <ButtonGroup spacing={4}>
+    <Button variant="primary" type="solid">
       Button
     </Button>
-    <Button variantColor="blue" variant="outline">
+    <Button variant="primary" type="outline">
       Button
     </Button>
-    <Button variantColor="black" variant="solid">
+    <Button variant="secondary" type="solid">
       Button
     </Button>
-    <Button variantColor="black" variant="outline">
+    <Button variant="secondary" type="outline">
       Button
     </Button>
   </ButtonGroup>
 );
 
 export const sizes = () => (
-  <ButtonGroup>
-    <Button variantColor="blue" size="sm">
+  <ButtonGroup spacing={6}>
+    <Button variant="primary" size="sm">
       Button
     </Button>
-    <Button variantColor="blue" size="md">
+    <Button variant="primary" size="md">
       Button
     </Button>
-    <Button variantColor="blue" size="lg">
+    <Button variant="primary" size="lg">
       Button
     </Button>
   </ButtonGroup>
 );
-

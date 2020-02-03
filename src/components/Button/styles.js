@@ -1,58 +1,100 @@
 import { theme } from "../../theme";
 ////////////////////////////////////////////////////////////
 
-const solidVariantProps = ({ color, colorMode = "light" }) => {
+const solidTypeProps = ({ variant }) => {
+  let commonStyles = {
+    bg: `${variant}`,
+    color: "white",
+    "&:disabled": {
+      ...disabledProps,
+      bg: "gray.400",
+      color: "gray.100",
+    },
+  };
   let style = {
-    light: {
-      bg: `${color}`,
-      color: "white",
-      _hover: {
-        bg: `${color}.600`,
+    primary: {
+      "&:hover:not([disabled])": {
+        bg: "blue.400",
       },
-      _active: {
-        bg: `${color}.700`,
+      "&:active:not([disabled])": {
+        bg: "blue.500",
+      },
+    },
+    secondary: {
+      "&:hover:not([disabled])": {
+        bg: "gray.950",
+      },
+      "&:active:not([disabled])": {
+        bg: "gray.800",
       },
     },
   };
 
-  return style[colorMode];
-};
-////////////////////////////////////////////////////////////
-
-const linkVariantProps = ({ color, colorMode = "light" }) => {
-  const _color = { light: `${color}.500`, dark: `${color}.200` };
-  const _activeColor = { light: `${color}.700`, dark: `${color}.500` };
   return {
-    p: 0,
-    height: "auto",
-    lineHeight: "normal",
-    color: _color[colorMode],
-    _hover: {
-      textDecoration: "underline",
-    },
-    _active: {
-      color: _activeColor[colorMode],
-    },
+    ...commonStyles,
+    ...style[variant],
   };
 };
+////////////////////////////////////////////////////////////
+
+const linkTypeProps = ({ variant }) => {
+  let styles = {
+    color: variant,
+    "&:disabled": {
+      ...disabledProps,
+      color: "gray.400",
+    },
+    "&:hover:not([disabled])": {
+      bg: "gray.100",
+      color: "blue.400",
+    },
+    "&:active:not([disabled])": {
+      bg: "gray.200",
+      color: "blue.500",
+    },
+  };
+
+  return styles;
+};
 
 ////////////////////////////////////////////////////////////
 
-const outlineVariantProps = props => {
-  const { color, colorMode = "light" } = props;
-  const borderColor = { light: "black", dark: "whiteAlpha.300" };
+const outlineTypeProps = props => {
+  const { variant } = props;
 
-  return {
+  const commonStyles = {
     border: "1px",
-    borderColor: color === "black" ? borderColor[colorMode] : "current",
-    color: `${color}`,
+    borderColor: variant,
+    color: `${variant}`,
     bg: "transparent",
-    _hover: {
-      bg: `${color}.50`,
+    "&:disabled": {
+      ...disabledProps,
+      borderColor: "gray.400",
+      color: "gray.400",
     },
-    _active: {
-      bg: `${color}.100`,
+  };
+  const style = {
+    primary: {
+      "&:hover:not([disabled])": {
+        borderColor: "blue.400",
+      },
+      "&:active:not([disabled])": {
+        borderColor: "blue.500",
+      },
     },
+    secondary: {
+      "&:hover:not([disabled])": {
+        borderColor: "gray.950",
+      },
+      "&:active:not([disabled])": {
+        borderColor: "gray.800",
+      },
+    },
+  };
+
+  return {
+    ...commonStyles,
+    ...style[variant],
   };
 };
 
@@ -72,7 +114,10 @@ const baseProps = {
   outline: "none",
   borderRadius: "md",
   border: "none",
-  fontWeight: "bold",
+  fontWeight: "medium",
+  "&:hover": {
+    cursor: "pointer",
+  },
 };
 
 ////////////////////////////////////////////////////////////
@@ -80,25 +125,25 @@ const baseProps = {
 const sizes = {
   lg: {
     height: 12,
-    minWidth: 12,
+    minWidth: 32,
     fontSize: "lg",
     px: 6,
   },
   md: {
     height: 10,
-    minWidth: 10,
+    minWidth: 32,
     fontSize: "md",
     px: 4,
   },
   sm: {
     height: 8,
-    minWidth: 8,
+    minWidth: 32,
     fontSize: "sm",
     px: 3,
   },
   xs: {
     height: 6,
-    minWidth: 6,
+    minWidth: 10,
     fontSize: "xs",
     px: 2,
   },
@@ -109,8 +154,7 @@ const sizeProps = ({ size }) => sizes[size];
 ////////////////////////////////////////////////////////////
 
 const disabledProps = {
-  _disabled: {
-    opacity: "40%",
+  "&:disabled": {
     cursor: "not-allowed",
     boxShadow: "none",
   },
@@ -119,21 +163,21 @@ const disabledProps = {
 ////////////////////////////////////////////////////////////
 
 const focusProps = {
-  _focus: {
+  "&:focus": {
     boxShadow: "outline",
   },
 };
 
 ////////////////////////////////////////////////////////////
 
-const variantProps = props => {
-  switch (props.variant) {
+const typeProps = props => {
+  switch (props.type) {
     case "solid":
-      return solidVariantProps(props);
+      return solidTypeProps(props);
     case "link":
-      return linkVariantProps(props);
+      return linkTypeProps(props);
     case "outline":
-      return outlineVariantProps(props);
+      return outlineTypeProps(props);
     default:
       return {};
   }
@@ -143,13 +187,14 @@ const variantProps = props => {
 
 const useButtonStyle = props => {
   const _props = { ...props, theme };
-  return {
+  const styles = {
     ...baseProps,
     ...sizeProps(_props),
     ...focusProps,
-    ...disabledProps,
-    ...variantProps(_props),
+    ...typeProps(_props),
+    width: _props.isFullWidth ? "full" : undefined,
   };
+  return styles;
 };
 
 export default useButtonStyle;

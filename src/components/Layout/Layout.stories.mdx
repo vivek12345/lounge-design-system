@@ -1,0 +1,77 @@
+import { Meta, Story, Props, Preview } from "@storybook/addon-docs/blocks";
+import Layout from "./Layout";
+import { Box } from "../Box";
+import { Header } from "../Header";
+import { IconButton } from "../IconButton";
+
+<Meta title="MDX/Layout" component={Layout} />
+
+# Layout
+
+Let's define a story for our `Layout` component with `Left Sibebar`
+
+<Preview withToolbar>
+  <Story name="Layout with left sidebar">
+    <Layout>
+      <Layout.Header>
+        <Header
+          logo="https://shadow-penguin-configuration-ui-staging.zlounge.zalan.do/static/media/lounge_logo_white.b81d4b52.png"
+          title="Product Title"
+          rightMenu={[
+            <IconButton
+              variant="primary"
+              type="outline"
+              icon="moon"
+              mr={4}
+              key="icon-button"
+            ></IconButton>,
+            <IconButton
+              variant="primary"
+              isRound={true}
+              icon="test"
+              key="icon-button-1"
+            ></IconButton>,
+          ]}
+        ></Header>
+      </Layout.Header>
+      <Layout.Sidebar height="sm" bg="gray.50"></Layout.Sidebar>
+      <Layout.Main height="sm" bg="gray.50"></Layout.Main>
+      <Layout.Footer height="24" bg="gray.50"></Layout.Footer>
+    </Layout>
+  </Story>
+</Preview>
+
+## Right sidebar
+
+Let's define a story for our `Layout` component with `Right Sibebar`
+
+<Preview withToolbar>
+  <Story name="Layout with right sidebar">
+    <Layout>
+      <Layout.Header>
+        <Header
+          logo="https://shadow-penguin-configuration-ui-staging.zlounge.zalan.do/static/media/lounge_logo_white.b81d4b52.png"
+          title="Product Title"
+          rightMenu={[
+            <IconButton
+              variant="primary"
+              type="outline"
+              icon="moon"
+              mr={4}
+              key="icon-button"
+            ></IconButton>,
+            <IconButton
+              variant="primary"
+              isRound={true}
+              icon="test"
+              key="icon-button-1"
+            ></IconButton>,
+          ]}
+        ></Header>
+      </Layout.Header>
+      <Layout.Main height="sm" bg="gray.50"></Layout.Main>
+      <Layout.Sidebar height="sm" bg="gray.50"></Layout.Sidebar>
+      <Layout.Footer height="24" bg="gray.50"></Layout.Footer>
+    </Layout>
+  </Story>
+</Preview>

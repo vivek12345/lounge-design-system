@@ -1,0 +1,59 @@
+import { Meta, Story, Props, Preview } from "@storybook/addon-docs/blocks";
+import { ButtonGroup } from "../ButtonGroup";
+import { Button } from "../Button";
+
+<Meta title="MDX/ButtonGroup" component={ButtonGroup} />
+
+# Button Group
+
+Let's define a story for our `Button Group` component
+
+<Story name="Button Group">
+  <ButtonGroup spacing={4}>
+    <Button variant="primary" type="outline">
+      Cancel
+    </Button>
+    <Button variant="primary" type="solid">
+      Save
+    </Button>
+  </ButtonGroup>
+</Story>
+
+<br />
+<br />
+
+## Code
+
+Preview for `Button Groups` with variant `Primary`
+
+<Preview withToolbar>
+  <Story name="Button Groups with primary variant">
+    <ButtonGroup spacing={4}>
+      <Button variant="primary" type="outline">
+        Cancel
+      </Button>
+      <Button variant="primary" type="solid">
+        Save
+      </Button>
+    </ButtonGroup>
+  </Story>
+</Preview>
+
+Preview for `Button Groups` with variant `secondary`
+
+<Preview withToolbar>
+  <Story name="Button Groups with secondary variant">
+    <ButtonGroup spacing={4}>
+      <Button variant="secondary" type="outline">
+        Cancel
+      </Button>
+      <Button variant="secondary" type="solid">
+        Save
+      </Button>
+    </ButtonGroup>
+  </Story>
+</Preview>
+
+## Properties
+
+<Props of={ButtonGroup} />

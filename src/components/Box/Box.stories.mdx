@@ -1,0 +1,54 @@
+import { Meta, Story, Props, Preview } from "@storybook/addon-docs/blocks";
+import { Box } from "../Box";
+
+<Meta title="MDX/Box" component={Box} />
+
+# Box
+
+The Box component is a low-level primitive used for layout purposes. It can be
+used to create grid layouts, apply padding or margin, and more.
+
+Here is an example of how the Box component can be used to apply padding and
+border around its children.
+
+<Story name="Box">
+  <Box p={4} border="1px" borderColor="blue.500" height="100%">
+    This is a box.
+  </Box>
+</Story>
+
+<br />
+<br />
+
+## 2 elements side-by-side:
+
+<Preview withToolbar>
+  <Story name="Box side-by-side">
+    <Box display="flex" px={64}>
+      <Box width={1 / 2} height="150px" bg="blue.200" />
+      <Box width={1 / 2} height="150px" bg="red.200" />
+    </Box>
+  </Story>
+</Preview>
+
+## Centering elements horizontally and vertically:
+
+<Preview withToolbar>
+  <Story name="Centering elements horizontally and vertically">
+    <Box
+      display="flex"
+      alignItems="center"
+      justifyContent="center"
+      bg="gray.50"
+      color="gray.800"
+      px={64}
+      py={6}
+    >
+      This content will be centered within the box.
+    </Box>
+  </Story>
+</Preview>
+
+## Properties
+
+<Props of={Box} />

@@ -1,0 +1,22 @@
+import { Fragment } from "react";
+import { Meta, Story, Props, Preview } from "@storybook/addon-docs/blocks";
+import Grid from "./Grid";
+import { Stack } from "../Stack";
+import { Flex } from "../Flex";
+import { Box } from "../Box";
+
+<Meta title="MDX/Grid" component={Grid} />
+
+# Grid with 12 columns
+
+Let's define a story for our `Grid` component
+
+<Preview withToolbar>
+  <Story name="Grid">
+    <Grid gap={6} templateColumns={"repeat(12, 1fr)"}>
+      {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11].map(index => {
+        return <Box key={index} width="full" height="xl" bg="red.50" />;
+      })}
+    </Grid>
+  </Story>
+</Preview>

@@ -1,43 +1,284 @@
-import { Meta, Story, Preview } from "@storybook/addon-docs/blocks";
-import { Box } from "../Box";
+import { Meta, Story, Props, Preview } from "@storybook/addon-docs/blocks";
 import { ButtonGroup } from "../ButtonGroup";
+import { Stack } from "../Stack";
 import Button from "./Button";
 
 <Meta title="MDX/Button" component={Button} />
 
 # Button
 
-With `MDX` we can define a story for `Button` right in the middle of our
-markdown documentation.
+`Solid orange buttons` = primary page level actions
 
-<Preview>
+`Outline orange buttons` = secondary page level actions
+
+Only one primary page level button (solid) can appear per page, because they are
+meant to direct users into taking the action you want them to take. They should
+highlight the most important, forward-moving action on the page. Examples of
+forward-moving actions are `Next`, `Submit`, `Continue`.
+
+The primary page level button can be used by itself or in combination with the
+secondary page level button (outline). The secondary page level button should
+never be used alone/without the primary page level button.
+
+When using both primary and secondary buttons together, place both buttons to
+the bottom right corner of the page with 24px padding from the right and bottom.
+The secondary button should be placed to the left of the primary button with
+24px in between.
+
+Let's define a story for our `Button` component
+
+<Story name="Button">
+  <Button variant="primary" type="solid">
+    Button
+  </Button>
+</Story>
+
+<br />
+<br />
+
+## Variants
+
+Preview for differnt `variants` and `type` of a button
+
+<Preview withToolbar>
   <Story name="Button variants">
-    <ButtonGroup spacing="24px">
-      <Button variantColor="blue" variant="solid">
+    <ButtonGroup spacing={6}>
+      <Button variant="primary" type="solid">
         Button
       </Button>
-      <Button variantColor="blue" variant="outline">
+      <Button variant="primary" type="outline">
         Button
       </Button>
-      <Button variantColor="black" variant="solid">
+      <Button variant="secondary" type="solid">
         Button
       </Button>
-      <Button variantColor="black" variant="outline">
+      <Button variant="secondary" type="outline">
         Button
       </Button>
+      <Button type="link">Button</Button>
     </ButtonGroup>
   </Story>
+</Preview>
+
+## Sizes
+
+`Button` component with different `sizes`
+
+<Preview withToolbar>
   <Story name="Button sizes">
-    <ButtonGroup>
-      <Button variantColor="blue" size="sm">
+    <ButtonGroup spacing={6}>
+      <Button variant="primary" type="solid" size="xs">
         Button
       </Button>
-      <Button variantColor="blue" size="md">
+      <Button variant="primary" type="solid" size="sm">
         Button
       </Button>
-      <Button variantColor="blue" size="lg">
+      <Button variant="primary" type="solid" size="md">
+        Button
+      </Button>
+      <Button variant="primary" type="solid" size="lg">
         Button
       </Button>
     </ButtonGroup>
   </Story>
 </Preview>
+
+## Links
+
+`Button` component as a `Link` with different `Sizes`
+
+<Preview withToolbar>
+  <Story name="Button links">
+    <ButtonGroup spacing={6}>
+      <Button type="link" size="sm">
+        Text Label
+      </Button>
+      <Button type="link" size="md">
+        Text Label
+      </Button>
+      <Button type="link" size="lg">
+        Text Label
+      </Button>
+    </ButtonGroup>
+  </Story>
+</Preview>
+
+## Icons
+
+`Button` component with `Icons`
+
+<Preview withToolbar>
+  <Story name="Button with icons">
+    <ButtonGroup spacing={6}>
+      <Button variant="primary" type="solid" size="md" leftIcon="test">
+        Button
+      </Button>
+      <Button variant="primary" type="outline" size="md" rightIcon="test">
+        Button
+      </Button>
+      <Button variant="secondary" type="solid" size="md" leftIcon="test">
+        Button
+      </Button>
+      <Button variant="secondary" type="outline" size="md" rightIcon="test">
+        Button
+      </Button>
+    </ButtonGroup>
+  </Story>
+</Preview>
+
+## Page Level Buttons
+
+<Preview withToolbar>
+  <Story name="Page level buttons">
+    <ButtonGroup spacing={6}>
+      <Button variant="primary" type="solid" size="md">
+        Button
+      </Button>
+      <Button variant="primary" type="outline" size="md">
+        Button
+      </Button>
+    </ButtonGroup>
+  </Story>
+</Preview>
+
+## Inline Level Buttons
+
+<Preview withToolbar>
+  <Story name="Inline level buttons">
+    <ButtonGroup spacing={6}>
+      <Button variant="secondary" type="solid" size="md">
+        Button
+      </Button>
+      <Button variant="secondary" type="outline" size="md">
+        Button
+      </Button>
+    </ButtonGroup>
+  </Story>
+</Preview>
+
+## Disabled buttons
+
+<Preview withToolbar>
+  <Story name="Disabled buttons">
+    <ButtonGroup spacing={6}>
+      <Button variant="primary" type="solid" size="md" isDisabled={true}>
+        Button
+      </Button>
+      <Button variant="primary" type="outline" size="md" isDisabled={true}>
+        Button
+      </Button>
+      <Button variant="secondary" type="solid" size="md" isDisabled={true}>
+        Button
+      </Button>
+      <Button variant="secondary" type="outline" size="md" isDisabled={true}>
+        Button
+      </Button>
+      <Button type="link" isDisabled={true}>
+        Text Label
+      </Button>
+    </ButtonGroup>
+  </Story>
+</Preview>
+
+## Full Width buttons
+
+<Preview withToolbar>
+  <Story name="Full Width buttons">
+    <Stack>
+      <Button variant="primary" type="solid" size="md" isFullWidth={true}>
+        Button
+      </Button>
+      <Button variant="primary" type="outline" size="md" isFullWidth={true}>
+        Button
+      </Button>
+      <Button variant="secondary" type="solid" size="md" isFullWidth={true}>
+        Button
+      </Button>
+      <Button variant="secondary" type="outline" size="md" isFullWidth={true}>
+        Button
+      </Button>
+    </Stack>
+  </Story>
+</Preview>
+
+## Loading buttons
+
+<Preview withToolbar>
+  <Story name="Loading buttons">
+    <ButtonGroup spacing={6}>
+      <Button variant="primary" type="solid" size="md" isLoading={true}>
+        Button
+      </Button>
+      <Button variant="primary" type="outline" size="md" isLoading={true}>
+        Button
+      </Button>
+      <Button variant="secondary" type="solid" size="md" isLoading={true}>
+        Button
+      </Button>
+      <Button variant="secondary" type="outline" size="md" isLoading={true}>
+        Button
+      </Button>
+      <Button type="link" isDisabled={true} isLoading={true}>
+        Text Label
+      </Button>
+    </ButtonGroup>
+  </Story>
+</Preview>
+
+## Buttons with loading text
+
+<Preview withToolbar>
+  <Story name="Buttons with loading text">
+    <ButtonGroup spacing={6}>
+      <Button
+        variant="primary"
+        type="solid"
+        size="md"
+        isLoading={true}
+        loadingText="Loading..."
+      >
+        Button
+      </Button>
+      <Button
+        variant="primary"
+        type="outline"
+        size="md"
+        isLoading={true}
+        loadingText="Saving..."
+      >
+        Button
+      </Button>
+      <Button
+        variant="secondary"
+        type="solid"
+        size="md"
+        isLoading={true}
+        loadingText="Fetching..."
+      >
+        Button
+      </Button>
+      <Button
+        variant="secondary"
+        type="outline"
+        size="md"
+        isLoading={true}
+        loadingText="Deleting..."
+      >
+        Button
+      </Button>
+      <Button
+        type="link"
+        size="md"
+        isDisabled={true}
+        isLoading={true}
+        loadingText="Updating..."
+      >
+        Text Label
+      </Button>
+    </ButtonGroup>
+  </Story>
+</Preview>
+
+## Properties
+
+<Props of={Button} />

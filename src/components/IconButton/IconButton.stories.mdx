@@ -1,0 +1,79 @@
+import { Meta, Story, Props, Preview } from "@storybook/addon-docs/blocks";
+import { ButtonGroup } from "../ButtonGroup";
+import IconButton from "./IconButton";
+
+<Meta title="MDX/IconButton" component={IconButton} />
+
+# IconButton
+
+Let's define a story for our `IconButton` component
+
+<Story name="IconButton">
+  <IconButton variant="primary" type="solid" icon="test" isRound={true} />
+</Story>
+
+<br />
+<br />
+
+## Variants
+
+Preview for differnt `variants` and `type` of a rounded icon button
+
+<Preview withToolbar>
+  <Story name="Icon Button rounded variants">
+    <ButtonGroup spacing={6}>
+      <IconButton variant="primary" type="solid" icon="test" isRound={true} />
+      <IconButton variant="primary" type="outline" icon="test" isRound={true} />
+      <IconButton variant="secondary" type="solid" icon="test" isRound={true} />
+      <IconButton
+        variant="secondary"
+        type="outline"
+        icon="test"
+        isRound={true}
+      />
+      <IconButton type="link" icon="test" isRound={true} />
+    </ButtonGroup>
+  </Story>
+</Preview>
+
+Preview for differnt `variants` and `type` of a non-rounded icon button
+
+<Preview withToolbar>
+  <Story name="Icon Button non-rounded variants">
+    <ButtonGroup spacing={6}>
+      <IconButton variant="primary" type="solid" icon="test" />
+      <IconButton variant="primary" type="outline" icon="test" />
+      <IconButton variant="secondary" type="solid" icon="test" />
+      <IconButton variant="secondary" type="outline" icon="test" />
+      <IconButton type="link" icon="test" />
+    </ButtonGroup>
+  </Story>
+</Preview>
+
+## Disabled icon buttons
+
+<Preview withToolbar>
+  <Story name="Disabled Icon buttons">
+    <ButtonGroup spacing={6}>
+      <IconButton
+        variant="primary"
+        type="solid"
+        isDisabled={true}
+        icon="test"
+        isRound={true}
+      />
+      <IconButton
+        variant="primary"
+        type="outline"
+        isDisabled={true}
+        icon="test"
+        isRound={true}
+      />
+      <IconButton type="link" isDisabled={true} icon="test" isRound={true} />
+    </ButtonGroup>
+  </Story>
+</Preview>
+
+## Properties
+
+<Props of={IconButton} />

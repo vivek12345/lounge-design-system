@@ -14,6 +14,7 @@ import {
 } from "styled-system";
 
 const Box = styled("div")(
+  props => props.css,
   compose(
     background,
     border,

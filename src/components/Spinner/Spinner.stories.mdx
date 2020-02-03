@@ -1,0 +1,56 @@
+import { Meta, Story, Props, Preview } from "@storybook/addon-docs/blocks";
+import Spinner from "./Spinner";
+import { ButtonGroup } from "../ButtonGroup";
+
+<Meta title="MDX/Spinner" component={Spinner} />
+
+# Spinner
+
+Let's define a story for our `Spinner` component
+
+<Story name="Button">
+  <Spinner />
+</Story>
+
+<br />
+<br />
+
+## Spinner with color
+
+<Preview withToolbar>
+  <Story name="Spinner color">
+    <Spinner color="red.300" />
+  </Story>
+</Preview>
+
+## Spinner Sizes
+
+`Spinner` component with different `sizes`
+
+<Preview withToolbar>
+  <Story name="Spinner sizes">
+    <ButtonGroup spacing={6}>
+      <Spinner size="sm" />
+      <Spinner size="md" />
+      <Spinner size="lg" />
+    </ButtonGroup>
+  </Story>
+</Preview>
+
+## Spinner with multiple props
+
+<Preview withToolbar>
+  <Story name="Spinner with props">
+    <Spinner
+      thickness="4px"
+      speed="0.65s"
+      emptyColor="gray.200"
+      color="blue.500"
+      size="xl"
+    />
+  </Story>
+</Preview>
+
+## Properties
+
+<Props of={Spinner} />
