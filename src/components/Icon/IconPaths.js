@@ -1,6 +1,15 @@
 import React from "react";
 
 export const iconPaths = {
+  avatar: {
+    path: (
+      <path
+        fill="currentColor"
+        d="M533 960a850 850 0 0 0 386-92v-19c0-117-242-223-306-234-20-3-21-58-21-58s59-58 72-137c35 0 56-84 21-113 2-31 45-243-173-243S337 276 338 307c-34 29-13 113 22 113 13 79 72 137 72 137s-1 55-21 58c-64 11-301 115-306 231a855 855 0 0 0 428 114z"
+      ></path>
+    ),
+    viewBox: "0 0 1024 1024",
+  },
   test: {
     path: (
       <path
@@ -34,6 +43,39 @@ export const iconPaths = {
         fill="currentColor"
         d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"
       ></path>
+    ),
+    viewBox: "0 0 24 24",
+  },
+  radioChecked: {
+    path: (
+      <path
+        fill="currentColor"
+        d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zm0-5C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"
+      />
+    ),
+    viewBox: "0 0 24 24",
+  },
+  radioUnChecked: {
+    path: (
+      <path
+        fill="currentColor"
+        d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"
+      />
+    ),
+    viewBox: "0 0 24 24",
+  },
+  checkboxChecked: {
+    path: (
+      <path
+        fill="currentColor"
+        d="M19 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.11 0 2-.9 2-2V5c0-1.1-.89-2-2-2zm-9 14l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"
+      />
+    ),
+    viewBox: "0 0 24 24",
+  },
+  checkboxUnChecked: {
+    path: (
+      <path d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z" />
     ),
     viewBox: "0 0 24 24",
   },

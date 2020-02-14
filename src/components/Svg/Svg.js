@@ -14,7 +14,6 @@ const Svg = forwardRef(
         focusable={focusable}
         role={role}
         ref={ref}
-        {...props}
         css={{
           flexShrink: 0,
           backfaceVisibility: "hidden",
@@ -22,6 +21,7 @@ const Svg = forwardRef(
             overflow: "hidden",
           },
         }}
+        {...props}
       >
         {children}
       </Box>

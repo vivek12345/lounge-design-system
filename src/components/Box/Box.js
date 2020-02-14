@@ -14,6 +14,11 @@ import {
 } from "styled-system";
 
 const Box = styled("div")(
+  {
+    boxSizing: "border-box",
+    margin: 0,
+    minWidth: 0,
+  },
   props => props.css,
   compose(
     background,

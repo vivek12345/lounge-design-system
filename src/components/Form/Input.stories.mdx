@@ -1,0 +1,82 @@
+import { Meta, Story, Props, Preview } from "@storybook/addon-docs/blocks";
+import Input from "./Input";
+import Radio from "./RadioBox";
+import Checkbox from "./CheckBox";
+import Switch from "./Switch";
+import { Button } from "../Button";
+import Label from "./Label";
+import { Box } from "../Box";
+import { Flex } from "../Flex";
+
+<Meta title="MDX/Input" component={Input} />
+
+# Horizontal Form with Inputs
+
+<Preview withToolbar>
+  <Story name="Horizontal form with Input">
+    <Box as="form" onSubmit={e => e.preventDefault()} py={3}>
+      <Flex>
+        <Box width={1 / 2} px={2}>
+          <Label htmlFor="email">Email</Label>
+          <Input
+            name="email"
+            type="text"
+            id="email"
+            placeholder="Enter email"
+          />
+        </Box>
+        <Box width={1 / 2} px={2}>
+          <Label htmlFor="name">Name</Label>
+          <Input name="name" type="text" id="name" placeholder="Enter name" />
+        </Box>
+      </Flex>
+    </Box>
+  </Story>
+</Preview>
+
+# Horizontal Form with Radio
+
+<Preview withToolbar>
+  <Story name="Horizontal form with Radio">
+    <Box as="form" onSubmit={e => e.preventDefault()} py={3}>
+      <Flex mb={4}>
+        <Box width={1 / 2} px={2}>
+          <Label htmlFor="email">Email</Label>
+          <Input
+            name="email"
+            type="text"
+            id="email"
+            placeholder="Enter email"
+          />
+        </Box>
+        <Box width={1 / 2} px={2}>
+          <Label htmlFor="name">Name</Label>
+          <Input name="name" type="text" id="name" placeholder="Enter name" />
+        </Box>
+      </Flex>
+      <Flex>
+        <Label width={1 / 6} p={2}>
+          <Radio id="gender" name="gender" value="Male" defaultChecked />
+          Male
+        </Label>
+        <Label width={1 / 6} p={2}>
+          <Radio id="gender" name="gender" value="Female" />
+          Female
+        </Label>
+        <Label width={1 / 6} p={2}>
+          <Checkbox id="remember" name="remember" />
+          Remember Me
+        </Label>
+        <Label width={1 / 6} p={2}>
+          <Switch aria-labelledby="toggle_label" />
+          <span id="toggle_label">Enable</span>
+        </Label>
+        <Box px={2} ml="auto">
+          <Button variant="primary" size="md">
+            Submit
+          </Button>
+        </Box>
+      </Flex>
+    </Box>
+  </Story>
+</Preview>

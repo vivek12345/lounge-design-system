@@ -1,0 +1,50 @@
+import { Meta, Story, Props, Preview } from "@storybook/addon-docs/blocks";
+import Badge from "./Badge";
+import { Stack } from "../Stack";
+
+<Meta title="MDX/Badge" component={Badge} />
+
+# Badge
+
+<Preview withToolbar>
+  <Story name="Badge">
+    <Badge variant="success">Success</Badge>
+  </Story>
+</Preview>
+
+<br />
+<br />
+
+# Badge with variants
+
+<Preview withToolbar>
+  <Story name="Badge with variants">
+    <Stack spacing="2" type="horizontal">
+      <Badge variant="success">Success</Badge>
+      <Badge variant="info">Info</Badge>
+      <Badge variant="error">Error</Badge>
+      <Badge variant="warning">Warning</Badge>
+    </Stack>
+  </Story>
+</Preview>
+
+# Round Badge with variants
+
+<Preview withToolbar>
+  <Story name="Round Badge with variants">
+    <Stack spacing="2" type="horizontal">
+      <Badge variant="success" isRound>
+        Success
+      </Badge>
+      <Badge variant="info" isRound>
+        Info
+      </Badge>
+      <Badge variant="error" isRound>
+        Error
+      </Badge>
+      <Badge variant="warning" isRound>
+        Warning
+      </Badge>
+    </Stack>
+  </Story>
+</Preview>

@@ -1,0 +1,57 @@
+import { Meta, Story, Props, Preview } from "@storybook/addon-docs/blocks";
+import CheckBox from "./CheckBox";
+import Label from "./Label";
+import { Stack } from "../Stack";
+
+<Meta title="MDX/CheckBox" component={CheckBox} />
+
+# CheckBox
+
+<Preview withToolbar>
+  <Story name="CheckBox">
+    <Label>
+      <CheckBox id="remember" name="remember" />
+      Remember Me
+    </Label>
+  </Story>
+</Preview>
+
+# Horizontal CheckBoxes
+
+<Preview withToolbar>
+  <Story name="Horizontal CheckBoxes">
+    <Stack spacing={4} type="HORIZONTAL">
+      <Label>
+        <CheckBox id="remember" name="remember" />
+        Remember Me
+      </Label>
+      <Label>
+        <CheckBox id="tandc" name="tandc" />T & C
+      </Label>
+      <Label>
+        <CheckBox id="cool" name="cool" />
+        Cool
+      </Label>
+    </Stack>
+  </Story>
+</Preview>
+
+# Vertical CheckBoxes
+
+<Preview withToolbar>
+  <Story name="Vertical CheckBoxes">
+    <Stack spacing={4}>
+      <Label>
+        <CheckBox id="remember" name="remember" />
+        Remember Me
+      </Label>
+      <Label>
+        <CheckBox id="tandc" name="tandc" />T & C
+      </Label>
+      <Label>
+        <CheckBox id="cool" name="cool" />
+        Cool
+      </Label>
+    </Stack>
+  </Story>
+</Preview>

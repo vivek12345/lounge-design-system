@@ -3,6 +3,7 @@ import Header from "./Header";
 import { Flex } from "../Flex";
 import { Box } from "../Box";
 import { IconButton } from "../IconButton";
+import { Avatar } from "../Avatar";
 import { Link } from "../Link";
 
 <Meta title="MDX/Header" component={Header} />
@@ -28,8 +29,10 @@ Let's define a story for our `Header` component
           variant="primary"
           isRound={true}
           icon="test"
+          mr={4}
           key="icon-button-1"
         ></IconButton>,
+        <Avatar src="https://bit.ly/dan-abramov" username={"Dan"} size="md" />,
       ]}
     ></Header>
   </Story>

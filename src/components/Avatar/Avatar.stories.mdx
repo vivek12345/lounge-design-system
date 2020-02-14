@@ -1,0 +1,33 @@
+import { Meta, Story, Props, Preview } from "@storybook/addon-docs/blocks";
+import Avatar from "./Avatar";
+import { Stack } from "../Stack";
+
+<Meta title="MDX/Avatar" component={Avatar} />
+
+# Avatar Usage
+
+<Preview withToolbar>
+  <Story name="Avatar with types">
+    <Stack spacing="2" type="horizontal">
+      <Avatar size="md" />
+      <Avatar username={"Vivek Nayyar"} size="md" />
+      <Avatar src="https://bit.ly/dan-abramov" size="md" />
+    </Stack>
+  </Story>
+</Preview>
+
+<br />
+<br />
+
+# Avatar with sizes
+
+<Preview withToolbar>
+  <Story name="Avatar with sizes">
+    <Stack spacing="2" type="horizontal">
+      <Avatar src="https://bit.ly/dan-abramov" username={"Dan"} size="xs" />
+      <Avatar src="https://bit.ly/dan-abramov" username={"Dan"} size="sm" />
+      <Avatar src="https://bit.ly/dan-abramov" username={"Dan"} size="md" />
+      <Avatar src="https://bit.ly/dan-abramov" username={"Dan"} size="lg" />
+    </Stack>
+  </Story>
+</Preview>
